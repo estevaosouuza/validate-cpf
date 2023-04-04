@@ -1,7 +1,7 @@
 const cpfInput = document.getElementById('cpf');
 const cpfMenssage = document.querySelector('.mensagem');
 
-
+// Função que valida o CPF
 const isValidCPF = (cpf) => {
     if (typeof cpf !== "string") return false
     cpf = cpf.replace(/[\s.-]*/igm, '')
@@ -39,7 +39,7 @@ const isValidCPF = (cpf) => {
 
 
 
-
+// Função que adiciona a máscara de CPF e verifica se é válido
 const maskCPF = () => {
     let cpf = cpfInput.value;
 
@@ -52,6 +52,7 @@ const maskCPF = () => {
     cpf = cpf.replace(/(\d{3})(\d{1,2})$/, '$1-$2')
 
     cpfInput.value = cpf;
+    
     // Verifica se o CPF é válido
     if (isValidCPF(cpf)) {
         cpfMenssage.innerHTML ="CPF válido ✅"
